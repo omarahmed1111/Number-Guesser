@@ -60,7 +60,13 @@ UIguessBtn.addEventListener('click', function(){
             // Change border color
             UIguessInput.style.borderColor = 'red';
             // Tell user it is the wrong number.
-            setMessage(`${guess} is not correct, ${guessesLeft} guesses left`, 'red');
+            if(winningNum>guess){
+                setMessage(`${guess} is less than the winning number, ${guessesLeft} guesses left`, 'red');
+            }
+            else{
+                setMessage(`${guess} is greater than the winning number, ${guessesLeft} guesses left`, 'red');
+            }
+            
         }
     }
 
